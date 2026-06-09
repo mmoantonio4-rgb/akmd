@@ -1,18 +1,20 @@
 // components/CloudImage.tsx
+
 interface CloudImageProps {
-  publicId: string; // El nombre del archivo en Cloudinary
+  publicId: string;
   alt: string;
+  className?: string; // El signo de interrogación "?" significa que es opcional
 }
 
-export default function CloudImage({ publicId, alt }: CloudImageProps) {
-  // Asegúrate de cambiar "dvwlxkbhb" por el tuyo real
-  const baseUrl = "https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/";
+export default function CloudImage({ publicId, alt, className = "" }: CloudImageProps) {
+  const baseUrl = "https://res.cloudinary.com/dvwlxkbhb/image/upload/";
   
   return (
     <img 
-      src={`${baseUrl}${publicId}`} // Aquí debe ir publicId, no dvwlxkbhb
+      src={`${baseUrl}${publicId}`} 
       alt={alt} 
-      className="rounded-lg shadow-lg"
+      // Aquí usamos la variable className que ahora sí reconoce
+      className={`rounded-lg shadow-lg ${className}`}
     />
   );
 }
