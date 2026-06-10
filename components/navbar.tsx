@@ -12,14 +12,14 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full py-6 px-8 flex flex-wrap justify-between items-center bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800">
-      <div className="font-bold text-xl tracking-tighter text-black dark:text-white">PINT-XI-LIKS</div>
-      <div className="flex gap-6 flex-wrap">
+    <nav className="w-full py-6 px-8 flex justify-between items-center bg-black border-b border-zinc-800">
+      <div className="text-white font-bold text-xl tracking-tighter">PINT-XI-LIKS</div>
+      <div className="flex gap-6">
         {links.map((link) => (
           <Link 
             key={link.path} 
             href={link.path}
-            className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors"
+            className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
           >
             {link.name}
           </Link>
